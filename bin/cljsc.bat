@@ -1,8 +1,8 @@
-
 @echo off
 setLocal EnableDelayedExpansion
 
 if "%CLOJURESCRIPT_HOME%" == "" set CLOJURESCRIPT_HOME=%~dp0..\
+if not %CLOJURESCRIPT_HOME:~-1%==\ SET CLOJURESCRIPT_HOME=%CLOJURESCRIPT_HOME%\
 
 set CLASSPATH=%CLOJURESCRIPT_HOME%src\clj;%CLOJURESCRIPT_HOME%src\cljs"
 for /R "%CLOJURESCRIPT_HOME%\lib" %%a in (*.jar) do (
